@@ -41,7 +41,7 @@ export default function Keyboard(){
                     ['0', 'Digit0'],
                     ['-', 'Minus'],
                     ['=', 'Equal'],
-                    ['Backspace', 'Backspace'],
+                    ['Backspace', 'Backspace', 'min-w-27 min-h-15'],
                 ]
     const row3 = [
                     ['Tab', 'Tab', 'min-w-22 min-h-15'],
@@ -57,7 +57,7 @@ export default function Keyboard(){
                     ['p', 'KeyP'],
                     ['[', 'BracketLeft'],
                     [']', 'BracketRight'],
-                    ['\\', 'Backslash'],
+                    ['\\', 'Backslash', 'min-w-20 min-h-15'],
                 ]
     const row4 = [
                     ['CapsLock', 'CapsLock', 'min-w-27 min-h-15'],
@@ -72,7 +72,7 @@ export default function Keyboard(){
                     ['l', 'KeyL'],
                     [';', 'Semicolon'],
                     ["'", 'Quote'],
-                    ['Enter', 'Enter'],
+                    ['Enter', 'Enter', 'min-w-29 min-h-15'],
                 ]
     const row5 = [
                     ['Shift', 'ShiftLeft', 'min-w-32 min-h-15'],
@@ -86,17 +86,16 @@ export default function Keyboard(){
                     [',', 'Comma'],
                     ['.', 'Period'],
                     ['/', 'Slash'],
-                    ['Shift', 'ShiftRight'],
+                    ['Shift', 'ShiftRight', 'min-w-33 min-h-15'],
                 ]
     const row6 = [
-                    ['Control', 'ControlLeft'],
-                    ['Meta', 'MetaLeft'],   // Windows / Cmd
-                    ['Alt', 'AltLeft'],
-                    ['Space', 'Space'],
-                    ['Alt', 'AltRight'],
-                    ['Meta', 'MetaRight'],
-                    ['ContextMenu', 'ContextMenu'],
-                    ['Control', 'ControlRight'],
+                    ['Ctrl', 'ControlLeft', 'min-w-20 min-h-15'],
+                    ['Meta', 'MetaLeft', 'min-w-20 min-h-15'],
+                    ['Alt', 'AltLeft', 'min-w-20 min-h-15'],
+                    ['Space', 'Space', 'min-w-105 min-h-15'],
+                    ['Alt', 'AltRight', 'min-w-20 min-h-15'],
+                    ['Context', 'ContextMenu', 'min-w-20 min-h-15'],
+                    ['Control', 'ControlRight', 'min-w-20 min-h-15'],
                 ]
     const specialNav =[
                     ['PrtScr', 'PrintScreen'],
@@ -200,43 +199,37 @@ export default function Keyboard(){
 
     return(
         <div className="flex flex-row">
-            {/* {[...keys].map((keyPress, key) => {
-                return(<div>
-                    {keyPress}
-                </div>)
-            }
-            )} */}
             <div>
-                <div className="flex gap-10 w-full">
+                <div className="flex gap-10 justify-between mb-4">
                     {row1.map((group, k) =>(
-                        <div>
+                        <div className="flex gap-2">
                             {group.map((keyMajor, l) => {    
                                 return(<Key name={keyMajor[0]} pressed={keys.has(keyMajor[1])}/>)
                             })}
                         </div>
                     ))}
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 justify-between">
                     {row2.map((keyMayor, k) =>{
                         return(<Key name={keyMayor[0]} pressed={keys.has(keyMayor[1])} className={keyMayor[2]}/>)
                     })}
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 justify-between">
                     {row3.map((keyMayor, k) =>{
                         return(<Key name={keyMayor[0]} pressed={keys.has(keyMayor[1])} className={keyMayor[2]}/>)
                     })}
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 justify-between">
                     {row4.map((keyMayor, k) =>{
                         return(<Key name={keyMayor[0]} pressed={keys.has(keyMayor[1])} className={keyMayor[2]}/>)
                     })}
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 justify-between">
                     {row5.map((keyMayor, k) =>{
                         return(<Key name={keyMayor[0]} pressed={keys.has(keyMayor[1])} className={keyMayor[2]}/>)
                     })}
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 justify-between">
                     {row6.map((keyMayor, k) =>{
                         return(<Key name={keyMayor[0]} pressed={keys.has(keyMayor[1])} className={keyMayor[2]}/>)
                     })}
