@@ -1,10 +1,11 @@
-export default function Key({name='a', width='10', pressed=false, className=false}){
+export default function Key({name='a', pressed=false, className=false}){
     return(
         <div className={`
-            ${className ? className:'inline-block min-w-15 min-h-15'}
-            px-3 py-2 border-2 rounded-sm text-center
+            ${className ? className:'inline-block w-15 h-15'}
+            py-2 border-2 rounded-sm text-center
+            transition-transform
             ${pressed ? 'scale-95':'border-[#7209b7]'}`}>
-            <p>{name}</p>
+            {name}
         </div>
     )
 }

@@ -28,7 +28,7 @@ export default function Keyboard(){
                     ]
                 ]
     const row2 = [
-                    ['`', 'Backquote'],
+                    ['`', 'Backquote', 'w-13 h-15'],
                     ['1', 'Digit1'],
                     ['2', 'Digit2'],
                     ['3', 'Digit3'],
@@ -41,10 +41,10 @@ export default function Keyboard(){
                     ['0', 'Digit0'],
                     ['-', 'Minus'],
                     ['=', 'Equal'],
-                    ['Backspace', 'Backspace', 'min-w-27 min-h-15'],
+                    ['Backspace', 'Backspace', 'w-27 h-15'],
                 ]
     const row3 = [
-                    ['Tab', 'Tab', 'min-w-22 min-h-15'],
+                    ['Tab', 'Tab', 'w-22 h-15'],
                     ['q', 'KeyQ'],
                     ['w', 'KeyW'],
                     ['e', 'KeyE'],
@@ -57,10 +57,10 @@ export default function Keyboard(){
                     ['p', 'KeyP'],
                     ['[', 'BracketLeft'],
                     [']', 'BracketRight'],
-                    ['\\', 'Backslash', 'min-w-20 min-h-15'],
+                    ['\\', 'Backslash', 'w-20 h-15'],
                 ]
     const row4 = [
-                    ['CapsLock', 'CapsLock', 'min-w-27 min-h-15'],
+                    ['CapsLock', 'CapsLock', 'w-25 h-15'],
                     ['a', 'KeyA'],
                     ['s', 'KeyS'],
                     ['d', 'KeyD'],
@@ -72,10 +72,10 @@ export default function Keyboard(){
                     ['l', 'KeyL'],
                     [';', 'Semicolon'],
                     ["'", 'Quote'],
-                    ['Enter', 'Enter', 'min-w-29 min-h-15'],
+                    ['Enter', 'Enter', 'w-27 h-15'],
                 ]
     const row5 = [
-                    ['Shift', 'ShiftLeft', 'min-w-32 min-h-15'],
+                    ['Shift', 'ShiftLeft', 'w-34 h-15'],
                     ['z', 'KeyZ'],
                     ['x', 'KeyX'],
                     ['c', 'KeyC'],
@@ -86,32 +86,32 @@ export default function Keyboard(){
                     [',', 'Comma'],
                     ['.', 'Period'],
                     ['/', 'Slash'],
-                    ['Shift', 'ShiftRight', 'min-w-33 min-h-15'],
+                    ['Shift', 'ShiftRight', 'w-36 h-15'],
                 ]
     const row6 = [
-                    ['Ctrl', 'ControlLeft', 'min-w-20 min-h-15'],
-                    ['Meta', 'MetaLeft', 'min-w-20 min-h-15'],
-                    ['Alt', 'AltLeft', 'min-w-20 min-h-15'],
-                    ['Space', 'Space', 'min-w-105 min-h-15'],
-                    ['Alt', 'AltRight', 'min-w-20 min-h-15'],
-                    ['Context', 'ContextMenu', 'min-w-20 min-h-15'],
-                    ['Control', 'ControlRight', 'min-w-20 min-h-15'],
+                    ['Ctrl', 'ControlLeft', 'w-20 h-15'],
+                    ['Meta', 'MetaLeft', 'w-20 h-15'],
+                    ['Alt', 'AltLeft', 'w-20 h-15'],
+                    ['Space', 'Space', 'w-105 h-15'],
+                    ['Alt', 'AltRight', 'w-20 h-15'],
+                    ['Context', 'ContextMenu', 'w-20 h-15'],
+                    ['Control', 'ControlRight', 'w-20 h-15'],
                 ]
     const specialNav =[
                     ['PrtScr', 'PrintScreen'],
-                    ['Scroll Lock', 'ScrollLock'],
+                    ['Scrl Lk', 'ScrollLock'],
                     ['Pause', 'Pause'],
                 ]
     const navigation = [
                     [
                         ['Ins', 'Insert'],
                         ['Home', 'Home'],
-                        ['Page Up', 'PageUp'],
+                        ['Pg Up', 'PageUp'],
                     ],
                     [
-                        ['Delete', 'Delete'],
+                        ['Del', 'Delete'],
                         ['End', 'End'],
-                        ['Page Down', 'PageDown'],
+                        ['Pg Dn', 'PageDown'],
                     ]
                 ]
     const arrows = [
@@ -126,7 +126,7 @@ export default function Keyboard(){
                 ]
     const numPad = [
                     [
-                        ['Num Lock', 'NumLock'],
+                        ['NumLk', 'NumLock'],
                         ['/', 'NumpadDivide'],
                         ['*', 'NumpadMultiply'],
                         ['-', 'NumpadSubtract']
@@ -135,7 +135,7 @@ export default function Keyboard(){
                         ['7', 'Numpad7'],
                         ['8', 'Numpad8'],
                         ['9', 'Numpad9'],
-                        ['+', 'NumpadAdd'],
+                        ['+', 'NumpadAdd', 'row-span-2 w-15'],
                     ],
                     [
                         ['4', 'Numpad4'],
@@ -146,10 +146,10 @@ export default function Keyboard(){
                         ['1', 'Numpad1'],
                         ['2', 'Numpad2'],
                         ['3', 'Numpad3'],
-                        ['Enter', 'NumpadEnter'],
+                        ['Enter', 'NumpadEnter', 'row-span-2 w-15'],
                     ],
                     [
-                        ['0', 'Numpad0'],
+                        ['0', 'Numpad0', 'col-span-2 h-15'],
                         ['.', 'NumpadDecimal'],
                     ]
                 ]
@@ -181,7 +181,7 @@ export default function Keyboard(){
         }
 
         const preventContextMenu = (e) => e.preventDefault() 
-
+        
         window.addEventListener('keydown', handleKeyDown)
         window.addEventListener('keyup', handleKeyUp)
         window.addEventListener("blur", clearKeys)
@@ -209,42 +209,42 @@ export default function Keyboard(){
                         </div>
                     ))}
                 </div>
-                <div className="flex gap-2 justify-between">
+                <div className="flex gap-2 justify-between mb-1">
                     {row2.map((keyMayor, k) =>{
                         return(<Key name={keyMayor[0]} pressed={keys.has(keyMayor[1])} className={keyMayor[2]}/>)
                     })}
                 </div>
-                <div className="flex gap-2 justify-between">
+                <div className="flex gap-2 justify-between mb-1">
                     {row3.map((keyMayor, k) =>{
                         return(<Key name={keyMayor[0]} pressed={keys.has(keyMayor[1])} className={keyMayor[2]}/>)
                     })}
                 </div>
-                <div className="flex gap-2 justify-between">
+                <div className="flex gap-2 justify-between mb-1">
                     {row4.map((keyMayor, k) =>{
                         return(<Key name={keyMayor[0]} pressed={keys.has(keyMayor[1])} className={keyMayor[2]}/>)
                     })}
                 </div>
-                <div className="flex gap-2 justify-between">
+                <div className="flex gap-1 justify-between mb-1">
                     {row5.map((keyMayor, k) =>{
                         return(<Key name={keyMayor[0]} pressed={keys.has(keyMayor[1])} className={keyMayor[2]}/>)
                     })}
                 </div>
-                <div className="flex gap-2 justify-between">
+                <div className="flex gap-2 justify-between mb-1">
                     {row6.map((keyMayor, k) =>{
                         return(<Key name={keyMayor[0]} pressed={keys.has(keyMayor[1])} className={keyMayor[2]}/>)
                     })}
                 </div>
             </div>
 
-            <div className="">
-                <div>
+            <div className="ml-2">
+                <div className="flex mb-4 gap-x-1">
                     {specialNav.map((keyMayor, k) => {
                         return(<Key name={keyMayor[0]} pressed={keys.has(keyMayor[1])} className={keyMayor[2]}/>)
                     })}
                 </div>
-                <div>
+                <div className="mb-17">
                     {navigation.map((group, k) => (
-                        <div>
+                        <div className="flex mb-1 gap-x-1">
                             {group.map((keyMayor, k) => {
                                 return(<Key name={keyMayor[0]} pressed={keys.has(keyMayor[1])} />)
                             })}
@@ -253,22 +253,22 @@ export default function Keyboard(){
                 </div>
                 <div>
                     {arrows.map((group, k) => (
-                        <div>
+                        <div className="flex justify-center gap-x-1 mb-1">
                             {group.map((keyMayor, k) => {
-                                return(<Key name={keyMayor[0]} pressed={keys.has(keyMayor[1])} />)
+                                return(<Key name={keyMayor[0]} pressed={keys.has(keyMayor[1])} className={keyMayor[2]}/>)
                             })}
                         </div>
                     ))}
                 </div>
             </div>
 
-            <div>
+            <div className="grid grid-cols-4 grid-rows-5 gap-x-1 mt-19 ml-2">
                 {numPad.map((group, k) => (
-                    <div>
-                        {group.map((keyMayor, k) => {
-                            return(<Key name={keyMayor[0]} pressed={keys.has(keyMayor[1])} className={keyMayor[2]}/>)
-                        })}
-                    </div>
+                    group.map((keyMayor, k) => {
+                        return(
+                        <Key name={keyMayor[0]} pressed={keys.has(keyMayor[1])} className={keyMayor[2]}/>
+                    )
+                })
                 ))}
             </div>
         </div>
