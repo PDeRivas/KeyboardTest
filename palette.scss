@@ -1,0 +1,47 @@
+/* Coolors Exported Palette - https://coolors.co/bb4430-7ebdc2-242424-7209b7-f7b267 */
+
+/* CSS HEX */
+--tomato-jam: #bb4430ff;
+--tropical-teal: #7ebdc2ff;
+--carbon-black: #242424ff;
+--indigo-bloom: #7209b7ff;
+--light-caramel: #f7b267ff;
+
+/* CSS HSL */
+--tomato-jam: hsla(9, 59%, 46%, 1);
+--tropical-teal: hsla(184, 36%, 63%, 1);
+--carbon-black: hsla(0, 0%, 14%, 1);
+--indigo-bloom: hsla(276, 91%, 38%, 1);
+--light-caramel: hsla(31, 90%, 69%, 1);
+
+/* SCSS HEX */
+$tomato-jam: #bb4430ff;
+$tropical-teal: #7ebdc2ff;
+$carbon-black: #242424ff;
+$indigo-bloom: #7209b7ff;
+$light-caramel: #f7b267ff;
+
+/* SCSS HSL */
+$tomato-jam: hsla(9, 59%, 46%, 1);
+$tropical-teal: hsla(184, 36%, 63%, 1);
+$carbon-black: hsla(0, 0%, 14%, 1);
+$indigo-bloom: hsla(276, 91%, 38%, 1);
+$light-caramel: hsla(31, 90%, 69%, 1);
+
+/* SCSS RGB */
+$tomato-jam: rgba(187, 68, 48, 1);
+$tropical-teal: rgba(126, 189, 194, 1);
+$carbon-black: rgba(36, 36, 36, 1);
+$indigo-bloom: rgba(114, 9, 183, 1);
+$light-caramel: rgba(247, 178, 103, 1);
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #bb4430ff, #7ebdc2ff, #242424ff, #7209b7ff, #f7b267ff);
+$gradient-right: linear-gradient(90deg, #bb4430ff, #7ebdc2ff, #242424ff, #7209b7ff, #f7b267ff);
+$gradient-bottom: linear-gradient(180deg, #bb4430ff, #7ebdc2ff, #242424ff, #7209b7ff, #f7b267ff);
+$gradient-left: linear-gradient(270deg, #bb4430ff, #7ebdc2ff, #242424ff, #7209b7ff, #f7b267ff);
+$gradient-top-right: linear-gradient(45deg, #bb4430ff, #7ebdc2ff, #242424ff, #7209b7ff, #f7b267ff);
+$gradient-bottom-right: linear-gradient(135deg, #bb4430ff, #7ebdc2ff, #242424ff, #7209b7ff, #f7b267ff);
+$gradient-top-left: linear-gradient(225deg, #bb4430ff, #7ebdc2ff, #242424ff, #7209b7ff, #f7b267ff);
+$gradient-bottom-left: linear-gradient(315deg, #bb4430ff, #7ebdc2ff, #242424ff, #7209b7ff, #f7b267ff);
+$gradient-radial: radial-gradient(#bb4430ff, #7ebdc2ff, #242424ff, #7209b7ff, #f7b267ff);
