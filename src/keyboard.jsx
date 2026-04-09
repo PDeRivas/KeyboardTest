@@ -2,11 +2,15 @@ import { useState, useEffect } from "react"
 
 import Key from "./key"
 
+import playTypingAudio from "./playTypingAudio"
+import SoundHandler from "./soundHandler"
+
 export default function Keyboard(){
     const [keys, setKeys] = useState(() => new Set())
     const [keysRecord, setKeysRecord] = useState(0)
     const [alreadyPressed, setAlreadyPressed] = useState(() => new Set())
-    
+    const [sound, setSound] = useState(true)
+
     const row1 = [
                     [
                         ['Esc', 'Escape'],
@@ -160,8 +164,11 @@ export default function Keyboard(){
     useEffect(()=>{
         const handleKeyDown = (e) => {
             let key = e.code
-            if (e.key != 'F12'){
-                e.preventDefault()
+            if (e.key != 'F12') e.preventDefault()            
+            if (e.repeat) return;
+            
+            if (sound){
+                playTypingAudio()
             }
 
             if (!alreadyPressed.has(key)){
@@ -212,7 +219,7 @@ export default function Keyboard(){
             window.removeEventListener("keyup", handleKeyUp)
             window.removeEventListener("blur", clearKeys)
         }
-    }, [])
+    }, [sound])
 
     return(
         <div>
@@ -280,15 +287,19 @@ export default function Keyboard(){
                         ))}
                     </div>
                 </div>
-
-                <div className="grid grid-cols-4 grid-rows-5 gap-x-1 mt-19 ml-2">
-                    {numPad.map((group, k) => (
-                        group.map((keyMajor, k) => {
-                            return(
-                            <Key name={keyMajor[0]} pressed={keys.has(keyMajor[1])} className={keyMajor[2]} alreadyPressed={alreadyPressed.has(keyMajor[1])}/>
-                        )
-                    })
-                    ))}
+                <div className="relative">
+                    <div className="absolute top-3 inset-x-28 w-10">
+                        <SoundHandler sound={sound} setSound={setSound}/>
+                    </div>
+                    <div className="grid grid-cols-4 grid-rows-5 gap-x-1 gap-y-1 mt-19 ml-2">
+                        {numPad.map((group, k) => (
+                            group.map((keyMajor, k) => {
+                                return(
+                                    <Key name={keyMajor[0]} pressed={keys.has(keyMajor[1])} className={keyMajor[2]} alreadyPressed={alreadyPressed.has(keyMajor[1])}/>
+                                )
+                            })
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
